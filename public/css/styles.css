@@ -19,60 +19,22 @@ a {
 
 .site-wrap {
   max-width: 780px;
-  margin: 40px auto;
+  margin: 10px auto;
   background: white;
-  padding: 40px;
-  text-align: justify;
+  padding: 10px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
   transform: scale(0.98);
   transition: transform 0.5s; }
+  @media (min-width: 46.25em) {
+    .site-wrap {
+      padding: 10px;
+      margin: 20px auto; } }
   body.fixed-nav .site-wrap {
     transform: scale(1); }
-
-nav {
-  display: flex;
-  background: #007eb6;
-  top: 0;
-  width: 100%;
-  transition: all 0.5s;
-  position: relative;
-  z-index: 1; }
-  .fixed-nav nav {
-    position: fixed;
-    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); }
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex: 1;
-  min-height: 2.25rem; }
-
-nav li {
-  flex: 1;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-nav a {
-  text-decoration: none;
-  display: inline-block;
-  color: white; }
-
-.logo img {
-  padding-top: 0.25rem;
-  width: 2rem;
-  margin-left: 0.5rem; }
-
-.logo {
-  max-width: 0;
-  overflow: hidden;
-  transition: all 0.5s; }
-
-.fixed-nav .logo {
-  max-width: 500px; }
+  .site-wrap h1, .site-wrap h2 {
+    font-weight: normal; }
+  .site-wrap ul {
+    padding: 1rem; }
 
 header {
   text-align: center;
@@ -93,5 +55,63 @@ header {
     font-size: 7vw;
     font-weight: 300;
     text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2); }
+
+nav {
+  background: #007eb6;
+  top: 0;
+  width: 100%;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1; }
+  @media screen and (min-width: 46.25em) {
+    nav {
+      display: flex; } }
+  .fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); }
+  nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    flex: 1;
+    min-height: 2.25rem;
+    position: absolute;
+    background: #007eb6;
+    z-index: 1000;
+    width: 100%; }
+    @media screen and (min-width: 46.25em) {
+      nav ul {
+        display: flex;
+        flex-direction: row; } }
+  nav li {
+    padding: 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid #fff; }
+    @media screen and (min-width: 46.25em) {
+      nav li {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        text-align: center; } }
+  nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: white; }
+
+.logo {
+  display: block;
+  max-width: 100%; }
+  .logo img {
+    padding: 0.25rem;
+    width: 2rem; }
+  @media (min-width: 46.25em) {
+    .logo {
+      max-width: 0;
+      overflow: hidden; } }
+
+.show #main ul {
+  display: block !important; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -35,17 +35,18 @@ window.onhashchange = function () {
   <h2>${newContent[0].header}</h2>
   <p>${newContent[0].content}</p>
   `;
+  document.body.classList.remove('show')
 }
 
-
-
-
-
-
-
-
-
-
-
-
+//when logo is clicked, if width is less than 740 then classname "show" is toggled/added
+const logo = document.querySelector('.logo'); //selecting element logo
+if (document.documentElement.clientWidth <= 740) { //if width is less than or equal to 740 then
+  logo.addEventListener('click', showMenu); //listen on click, run showMenu function
+}
+function showMenu(e){ //named function
+  if (window.matchMedia('only screen and (max-width: 740px)').matches){ //uses matchmedia for media queries
+    document.body.classList.toggle('show'); //toggle new class show
+  }
+  e.preventDefault(); //e is event
+}
 
